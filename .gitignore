@@ -1,0 +1,12 @@
+.vscode
+.DS_Store
+Thumbs.db
+/fsh-generated
+/input-cache
+/output
+/temp
+/template
+/differentials
+/validator_cli*
+/node_modules
+/jre
