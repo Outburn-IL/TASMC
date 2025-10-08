@@ -1,0 +1,15 @@
+{
+  "website": {
+    "style": "fhir.layout",
+    "url": "http://fhir.health.gov.il",
+    "server": "apache",
+    "org": "IL Core"    
+  },
+  "layout-rules": [
+    {
+      "npm": "il.core.fhir.r4",
+      "canonical": "http://fhir.health.gov.il",
+      "destination": "/core"
+    }
+  ]
+}

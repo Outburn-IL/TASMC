@@ -1,0 +1,122 @@
+name: Deploy to Amazon ECS Production
+    
+on:
+  workflow_dispatch:
+
+env:
+  AWS_REGION: il-central-1
+  ECR_REPOSITORY: igpublisher-backend-prod
+  ECS_SERVICE: igpublisher-backend-prod
+  ECS_CLUSTER: igpublisher
+  ECS_TASK_DEFINITION: task-definition.json
+  CONTAINER_NAME: main
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: free disk space
+      run: |
+        sudo swapoff -a
+        sudo rm -f /swapfile
+        sudo apt clean
+        docker rmi $(docker image ls -aq)
+        df -h
+
+    - name: clone repos ig-history & ig-registry
+      run: |
+        git clone https://github.com/HL7/fhir-ig-history-template.git ig-history
+        git clone https://github.com/FHIR/ig-registry.git ig-registry
+        
+    - name: Install jekyll & jre
+      run: |
+        sudo rm /etc/apt/sources.list.d/microsoft-prod.list && \
+        sudo apt-get update && \
+        sudo apt-get install -y curl gnupg ruby-full build-essential && \
+        sudo gem install jekyll bundler && \
+        sudo apt install default-jre -y
+
+    - name: Install sushi
+      run: |
+        sudo apt-get install npm -y && \
+        sudo apt-get install -y nodejs && \
+        sudo npm install -g fsh-sushi -y
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Download older versions
+      run: |
+        aws s3 sync s3://igpublisher-static-prod ./webroot --region eu-west-1
+        if [ -d "./webroot/html" ]; then
+          mv ./webroot/html ./webroot/core
+          versions=$(jq -r '.list[] | select( .version != "current" ) | .version' ./webroot/core/package-list.json)
+          for version in $versions; do
+            mkdir "./webroot/$version"
+            echo "Folder 'webroot/$version' created."
+          done
+        else
+          echo "First Version"
+        fi
+        
+    - name: Build, tag, and push image to Amazon ECR
+      id: build-image
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        # download publisher
+        mkdir ./ILCore/input-cache/ && \
+        curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o "./ILCore/input-cache/publisher.jar"
+        
+        # run genonce.sh
+        chmod +x ./ILCore/_genonce.sh && \
+        cd ILCore && \
+        ./_genonce.sh && \
+        cd ..
+      
+        # Build a docker container and
+        # push it to ECR so that it can
+        # be deployed to ECS.
+        docker build -t igpublisher .
+        docker tag igpublisher $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG 
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+        
+    - name: Fill in the new image ID in the Amazon ECS task definition
+      id: task-def
+      uses: aws-actions/amazon-ecs-render-task-definition@v1
+      with:
+        task-definition: ${{ env.ECS_TASK_DEFINITION }}
+        container-name: ${{ env.CONTAINER_NAME }}
+        image: ${{ steps.build-image.outputs.image }}
+
+    - name: Deploy Amazon ECS task definition
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      with:
+        task-definition: ${{ steps.task-def.outputs.task-definition }}
+        service: ${{ env.ECS_SERVICE }}
+        cluster: ${{ env.ECS_CLUSTER }}
+        wait-for-service-stability: false
+
+    - name: Copy version to S3
+      run: |
+        docker run -d --name backup igpublisher
+        docker cp backup:/var/www /tmp/S3
+        aws s3 sync /tmp/S3 s3://igpublisher-static-prod --region eu-west-1

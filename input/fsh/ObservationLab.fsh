@@ -1,8 +1,8 @@
-Profile: TasmcObservationMicroLab
+Profile: TasmcObservationLab
 Parent: ILCoreObservationLab
-Id: tasmc-observation-micro-lab
-Title: "Sourasky Lab Micro Results Profile"
-Description: "tasmc Observation Micro Lab profile, based on ILcoreObservationLab"
+Id: tasmc-observation-lab
+Title: "Sourasky Lab Results Profile"
+Description: "tasmc Observation Lab profile, based on ILcoreObservationLab"
 * id 1..1
 * identifier.system 1..1
 * identifier.system = $lab-request-ident (exactly)
@@ -11,18 +11,24 @@ Description: "tasmc Observation Micro Lab profile, based on ILcoreObservationLab
 * subject.identifier 1..1
 * subject.identifier.system 1..1
 * subject.identifier.system = $patient-namer-ident (exactly)
-* performer[organization].identifier.system 1..1
-* performer[organization].identifier.system = $lab-unit-ident (exactly)
-* performer[organization].identifier.value 1..1
-* performer[practitioner].identifier.system 0..1
+* performer ^slicing.discriminator.type = #value
+* performer ^slicing.discriminator.path = "identifier.system"
+* performer ^slicing.rules = #open
+* performer contains practitioner 0..* and lab-unit 0..*
+* performer[lab-unit].identifier.system 1..1
+* performer[lab-unit].identifier.system = $lab-unit-ident (exactly)
+* performer[lab-unit].identifier.value 1..1
+* performer[practitioner].identifier.system 1..1
 * performer[practitioner].identifier.system = $prac-ident (exactly)
-* code.coding 2..2
+* performer[practitioner].identifier.value 1..1
+* code.coding 1..*
 * code.coding ^slicing.discriminator.type = #value
 * code.coding ^slicing.discriminator.path = "system"
-* code.coding ^slicing.rules = #closed
+* code.coding ^slicing.rules = #open
 * code.coding ^slicing.description = "Must have one ILCore Code and one of tasmc"
 * code.coding contains tasmcSingleResult 1..1
 * code.coding[tasmcSingleResult].system 1..1
 * code.coding[tasmcSingleResult].system = $lab-request-code (exactly)
 * code.coding[tasmcSingleResult].code 1..1
 * code.coding[tasmcSingleResult].display 1..1
+* category[il-core].coding.display = "Laboratory procedure" (exactly)

@@ -1,6 +1,15 @@
 .vscode
 .DS_Store
 Thumbs.db
+/TASMC/fsh-generated
+/TASMC/input-cache
+/TASMC/output
+/TASMC/temp
+/TASMC/template
+/TASMC/differentials
+/TASMC/validator_cli*
+/TASMC/node_modules
+/TASMC/jre
 /fsh-generated
 /input-cache
 /output
