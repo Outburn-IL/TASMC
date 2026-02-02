@@ -26,7 +26,10 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  il.core.fhir.r4: 0.18.4
+  il.core.fhir.r4: 
+    uri: http://fhir.health.gov.il/ImplementationGuide/il.core.fhir.r4
+    version: 0.19.1
+
 pages:
   index.md:
     title: הקדמה
@@ -50,7 +53,9 @@ pages:
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 #   יש לשים לב שסדר הטאבים באתר הוא הופכי לרשימה הבאה שכן בעברית המדריך יוצג מימין לשמאל  
+
 menu:
+  סוגיות: issues.html
   קישורים נוספים:
     FHIR Spec: new-tab {{site.data.fhir.path}}index.html
     Israel LCore: new-tab https://en.fhir-il-community.org/fhir-israel-core
