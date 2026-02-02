@@ -22,4 +22,5 @@ Thumbs.db
 /node_modules
 /jre
 *.zip
-*.md
+#remove these when ready to publish
+# *.md
