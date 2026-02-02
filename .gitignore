@@ -4,6 +4,8 @@ Thumbs.db
 /TASMC/fsh-generated
 /TASMC/input-cache
 /TASMC/output
+/TASMC/input/input
+/TASMC/input/assets
 /TASMC/temp
 /TASMC/template
 /TASMC/differentials
@@ -19,3 +21,5 @@ Thumbs.db
 /validator_cli*
 /node_modules
 /jre
+*.zip
+*.md

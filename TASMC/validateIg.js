@@ -33,13 +33,29 @@ const readResults = async () => {
 const runValidate = async () => {
     deleteIgResource();
     if (java && jar) {
-        const command = `"${java}" -Dfile.encoding=UTF-8 -jar "${jar}" "${diffFolder}" -version ${getFhirVersion()} -jurisdiction global -ig "${igFolder}" ${getDependencies(sushiConfig)} -output ${outputPathJson} -html-output ${outputPathHtml}`;
-        const subprocess = execa(command);
+        // 1. Prepare arguments in an array (no manual quotes needed)
+        const args = [
+            "-Dfile.encoding=UTF-8",
+            "-jar", jar,
+            diffFolder,
+            "-version", getFhirVersion(),
+            "-jurisdiction", "global",
+            "-ig", igFolder,
+            ...getDependencies(sushiConfig).split(/\s+/).filter(Boolean),
+            "-output", outputPathJson,
+            "-html-output", outputPathHtml
+        ];
+
+        // 2. Call execa with (file, argumentsArray)
+        const subprocess = execa(java, args);
+        
         subprocess.stdout.pipe(process.stdout);
         await subprocess;
+
         const errors = await readResults();
         const message = `Finished validating IG artifacts. Found ${(errors.fatal ?? 0) + (errors.error ?? 0)} errors (${errors.fatal ?? 0} fatal) and ${errors.warning ?? 0} warnings`;
         console.log(message)
+        
         if (errors?.error || errors?.fatal) {
             throw new Error(`Validation failed! See detailed results in: ${outputPathHtml}`)
         } else if (errors?.warning) {
