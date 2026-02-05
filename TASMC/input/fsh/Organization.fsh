@@ -1,9 +1,9 @@
 Profile: TasmcOrganization
-Parent: ILCoreOrganization
+Parent: ILHDPOrganization
 Id: tasmc-organization
 Title: "Sourasky Organization Profile"
 Description: "Sourasky Organization Profile"
-// * insert ConformanceMetadata
+* insert ConformanceMetadata
 
 * id 1..1
 
