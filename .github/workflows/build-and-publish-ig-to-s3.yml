@@ -21,7 +21,7 @@ env:
   IG_DIR: TASMC
 
 jobs:
-  build-and-push-builder-image:
+  build-and-publish-ig-to-s3:
     runs-on: ubuntu-latest
 
     steps:
