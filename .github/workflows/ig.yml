@@ -15,7 +15,7 @@ concurrency:
 
 env:
   JAVA_VERSION: "21"
-  PUBLISHER_VERSION: "2.1.0"
+  PUBLISHER_VERSION: "v2.1.0"
   PUBLISHER_JAR: tools/publisher.jar
 
 jobs:
