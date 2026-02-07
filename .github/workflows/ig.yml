@@ -1,0 +1,97 @@
+name: Build & Deploy IG
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ig-deploy
+  cancel-in-progress: false
+
+env:
+  JAVA_VERSION: "21"
+  PUBLISHER_VERSION: "2.1.0"
+  PUBLISHER_JAR: tools/publisher.jar
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ------------------------------------------------------------
+      # Checkout
+      # ------------------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ------------------------------------------------------------
+      # Java
+      # ------------------------------------------------------------
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+
+      # ------------------------------------------------------------
+      # Cache publisher.jar
+      # ------------------------------------------------------------
+      - name: Cache FHIR IG Publisher
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.PUBLISHER_JAR }}
+          key: ig-publisher-${{ env.PUBLISHER_VERSION }}
+
+      # ------------------------------------------------------------
+      # Download publisher.jar (if not cached)
+      # ------------------------------------------------------------
+      - name: Download FHIR IG Publisher
+        run: |
+          mkdir -p tools
+          if [ ! -f "${PUBLISHER_JAR}" ]; then
+            echo "Downloading FHIR IG Publisher..."
+            curl -fL \
+              -o "${PUBLISHER_JAR}" \
+              https://github.com/HL7/fhir-ig-publisher/releases/${PUBLISHER_VERSION}/download/publisher.jar
+          fi
+
+          echo "Publisher size:"
+          ls -lh "${PUBLISHER_JAR}"
+
+      # ------------------------------------------------------------
+      # Clean output (MANDATORY)
+      # ------------------------------------------------------------
+      - name: Clean output
+        run: |
+          rm -rf TASMC/output
+          mkdir -p TASMC/output
+
+      # ------------------------------------------------------------
+      # Build IG
+      # ------------------------------------------------------------
+      - name: Build FHIR Implementation Guide
+        run: |
+          cd TASMC
+          java -jar ../${PUBLISHER_JAR} -ig .
+
+      # ------------------------------------------------------------
+      # AWS credentials
+      # ------------------------------------------------------------
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # ------------------------------------------------------------
+      # Deploy (current)
+      # ------------------------------------------------------------
+      - name: Deploy to S3 (current)
+        run: |
+          aws s3 sync TASMC/output/ s3://${{ secrets.S3_BUCKET }}/current --delete
