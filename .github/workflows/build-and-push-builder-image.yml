@@ -11,7 +11,7 @@ permissions:
   packages: write
 
 concurrency:
-  group: ig-deploy
+  group: build-and-push-builder-image
   cancel-in-progress: false
 
 env:
