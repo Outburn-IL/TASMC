@@ -15,7 +15,7 @@ concurrency:
 
 env:
   JAVA_VERSION: "21"
-  PUBLISHER_VERSION: "v2.1.0"
+  PUBLISHER_VERSION: "2.1.0"
   PUBLISHER_JAR: tools/publisher.jar
 
 jobs:
@@ -57,7 +57,7 @@ jobs:
             echo "Downloading FHIR IG Publisher..."
             curl -fL \
               -o "${PUBLISHER_JAR}" \
-              https://github.com/HL7/fhir-ig-publisher/releases/${PUBLISHER_VERSION}/download/publisher.jar
+              https://github.com/HL7/fhir-ig-publisher/releases/download/${PUBLISHER_VERSION}/publisher.jar
           fi
 
           echo "Publisher size:"
