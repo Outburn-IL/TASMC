@@ -20,7 +20,7 @@ env:
   IMAGE_TAG: ${{ github.ref_name }}
 
 jobs:
-  docker-builder:
+  build-and-publish-ig-to-s3:
     runs-on: ubuntu-latest
 
     steps:

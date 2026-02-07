@@ -21,7 +21,7 @@ env:
   IG_DIR: TASMC
 
 jobs:
-  build-and-deploy:
+  build-and-push-builder-image:
     runs-on: ubuntu-latest
 
     steps:
