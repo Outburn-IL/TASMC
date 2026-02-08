@@ -1,0 +1,81 @@
+name: Build & Publish IG to S3
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: read
+  id-token: write
+
+concurrency:
+  group: build-and-publish-ig-to-s3
+  cancel-in-progress: false
+
+env:
+  IMAGE_NAME: ghcr.io/outburn-il/ig-builder
+  IMAGE_TAG: latest
+  IG_DIR: TASMC
+
+jobs:
+  build-and-publish-ig-to-s3:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ------------------------------------------------------------
+      # Checkout
+      # ------------------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ------------------------------------------------------------
+      # Login to GHCR (PRIVATE image)
+      # ------------------------------------------------------------
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # ------------------------------------------------------------
+      # Pull IG Builder image
+      # ------------------------------------------------------------
+      - name: Pull IG Builder image
+        run: |
+          docker pull $IMAGE_NAME:$IMAGE_TAG
+
+      # ------------------------------------------------------------
+      # Clean output (MANDATORY)
+      # ------------------------------------------------------------
+      - name: Clean IG output
+        run: |
+          rm -rf ${{ env.IG_DIR }}/output
+          mkdir -p ${{ env.IG_DIR }}/output
+
+      # ------------------------------------------------------------
+      # Build IG (EXACT local docker invocation)
+      # ------------------------------------------------------------
+      - name: Build FHIR Implementation Guide
+        run: |
+          docker run --rm -v "$PWD:/work" $IMAGE_NAME:$IMAGE_TAG -ig ${{ env.IG_DIR }}
+
+      # ------------------------------------------------------------
+      # Configure AWS credentials (OIDC)
+      # ------------------------------------------------------------
+      - name: Configure AWS credentials (static keys)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # ------------------------------------------------------------
+      # Deploy (current)
+      # ------------------------------------------------------------
+      - name: Deploy to S3 (current)
+        run: |
+          aws s3 sync ${{ env.IG_DIR }}/output/ s3://${{ secrets.S3_BUCKET }}/current --delete
