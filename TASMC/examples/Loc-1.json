@@ -1,0 +1,52 @@
+{
+  "resourceType": "Location",
+  "id": "LOC.1111",
+  "meta": {
+    "profile": [
+      "http://hdp.fhir.health.gov.il/StructureDefinition/il-hdp-location"
+    ],
+    "security": [
+      {
+        "system": "http://fhir.health.gov.il/cs/il-hdp-information-buckets",
+        "code": "organization",
+        "display": "יחידה ארגונית"
+      }
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.tasmc.org.il/identifier/location_id",
+      "value": "1111",
+      "type": {
+        "coding": [{
+          "system": "http://fhir.health.gov.il/cs/il-core-identifier-type",
+          "code": "strong-id",
+          "display": "Strong Identifier"
+        }]
+      }
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+          "code": "HU",
+          "display": "Hospital unit"
+        }
+      ]
+    }
+  ],
+  "name": "פנימית ג",
+  "address": 
+    {
+      "type": "physical",
+      "line": ["בניין ראשי אגף פנימי"],
+      "city": "תל אביב"
+    }
+  
+  ,
+  "managingOrganization": {
+    "reference": "Organization/UNIT.1000"
+  }
+}

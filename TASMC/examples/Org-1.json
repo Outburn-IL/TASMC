@@ -1,0 +1,49 @@
+{
+  "resourceType": "Organization",
+  "id": "UNIT.1111",
+  "meta": {
+    "profile": [
+      "http://hdp.fhir.health.gov.il/StructureDefinition/il-hdp-organization"    ],
+    "security": [
+      {
+        "system": "http://fhir.health.gov.il/cs/il-hdp-information-buckets",
+        "code": "organization",
+        "display": "יחידה ארגונית"
+      }
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.tasmc.org.il/identifier/unit_id",
+      "value": "1111",
+      "type": {
+        "coding": [{
+          "system": "http://fhir.health.gov.il/cs/il-core-identifier-type",
+          "code": "strong-id",
+          "display": "Strong Identifier"
+        }]
+      }
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://fhir.health.gov.il/cs/department-type-moh",
+          "code": "10013",
+          "display": "אשפוז - פנימית ג"
+        }
+      ]
+    }
+  ],
+  "name": "פנימית ג",
+  "address": [
+    {
+      "line": ["בניין ראשי אגף פנימי"],
+      "city": "תל אביב"
+    }]
+  ,
+  "partOf": {
+    "reference": "Organization/UNIT.1000"
+  }
+}
