@@ -17,11 +17,11 @@
       "system": "http://fhir.tasmc.org.il/identifier/unit_id",
       "value": "1111",
       "type": {
-        "coding": {
+        "coding": [{
           "system": "http://fhir.health.gov.il/cs/il-core-identifier-type",
           "code": "strong-id",
           "display": "Strong Identifier"
-        }
+        }]
       }
     }
   ],
@@ -37,12 +37,12 @@
     }
   ],
   "name": "פנימית ג",
-  "mode": "instance",
   "address": [
     {
-      "line": "וייצמן 6 תל אביב-יפו"
-    }
-  ],
+      "line": ["בניין ראשי אגף פנימי"],
+      "city": "תל אביב"
+    }]
+  ,
   "partOf": {
     "reference": "Organization/UNIT.1000"
   }
