@@ -282,6 +282,6 @@
 [Structured Data Capture (SDC) Questionnaire Response Profile]: {{site.data.fhir.hl7_fhir_uv_sdc}}/StructureDefinition-sdc-questionnaireresponse.html
 [Structured Data Capture (SDC)]: {{site.data.fhir.hl7_fhir_uv_sdc}}
 [General Requirements]: general-requirements.html
-[Directory of published versions]: {{site.data.fhir.path}}/versions.html
+[Directory of published versions]: {{site.data.fhir.canonical}}/history.html
 [General Requirements]: general-requirements.html
 [HL7 C-CDA]: http://www.hl7.org/implement/standards/product_brief.cfm?product_id=492
