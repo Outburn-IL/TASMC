@@ -5,7 +5,7 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: il.tasmc.fhir.r4
 packageId: il.tasmc.fhir.r4
-canonical: http://fhir.tasmc.org.il
+canonical: https://ig-ichilov.r7g.org
 name: tasmc
 title: Tel Aviv Sourasky Medical Center
 # description: Example Implementation Guide for getting started with SUSHI
@@ -18,7 +18,7 @@ releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | re
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: TASMC
-  url: http://https://www.tasmc.org.il
+  url: https://www.tasmc.org.il
   # email: test@example.org
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
@@ -49,6 +49,9 @@ pages:
   downloads.md:
     title: הורדות
     generation: markdown
+  versions.md:
+    title: גרסאות
+    generation: markdown
 
 
 
@@ -59,7 +62,7 @@ pages:
 
 menu:
   סוגיות: issues.html
-  קישורים נוספים:
+  קישורים:
     FHIR Spec: new-tab {{site.data.fhir.path}}index.html
     Israel LCore: new-tab https://en.fhir-il-community.org/fhir-israel-core
   הורדות: downloads.html
@@ -67,13 +70,8 @@ menu:
     פרופילים והרחבות: profiles-and-extensions.html
     טרמינולוגיה: terminology.html
     דוגמאות: examples.html
-  # הנחיות: 
-
-  # פרויקט:
-
   בית: index.html
 
-#
 # The parameters property represents IG.definition.parameter. Rather
 # than a list of code/value pairs (as in the ImplementationGuide
 # resource), the code is the YAML key. If a parameter allows repeating
