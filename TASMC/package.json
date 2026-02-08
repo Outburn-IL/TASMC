@@ -1,6 +1,9 @@
 {
   "name": "il.tasmc.fhir",
   "version": "0.4.2",
+  "fhirVersions": [
+    "4.0.1"
+  ],
   "description": "Tel Aviv Sourasky Medical Center Profiles",
   "type": "module",
   "scripts": {

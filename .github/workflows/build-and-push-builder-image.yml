@@ -16,7 +16,6 @@ concurrency:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ghcr.io/outburn-il/ig-builder
   IMAGE_TAG: ${{ github.ref_name }}
 
 jobs:
@@ -24,6 +23,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # ------------------------------------------------------------
+      # Set the image name
+      # ------------------------------------------------------------
+      - name: Set image name
+        run: |
+          OWNER_LC=$(echo "${GITHUB_REPOSITORY_OWNER}" | tr '[:upper:]' '[:lower:]')
+          echo "IMAGE_NAME=ghcr.io/${OWNER_LC}/ig-builder" >> $GITHUB_ENV
+
       # ------------------------------------------------------------
       # Checkout
       # ------------------------------------------------------------
