@@ -59,7 +59,7 @@ pages:
 
 menu:
   סוגיות: issues.html
-  קישורים נוספים:
+  קישורים:
     FHIR Spec: new-tab {{site.data.fhir.path}}index.html
     Israel LCore: new-tab https://en.fhir-il-community.org/fhir-israel-core
   הורדות: downloads.html
@@ -67,13 +67,8 @@ menu:
     פרופילים והרחבות: profiles-and-extensions.html
     טרמינולוגיה: terminology.html
     דוגמאות: examples.html
-  # הנחיות: 
-
-  # פרויקט:
-
   בית: index.html
 
-#
 # The parameters property represents IG.definition.parameter. Rather
 # than a list of code/value pairs (as in the ImplementationGuide
 # resource), the code is the YAML key. If a parameter allows repeating
