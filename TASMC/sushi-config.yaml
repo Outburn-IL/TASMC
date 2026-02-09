@@ -5,7 +5,8 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: il.tasmc.fhir.r4
 packageId: il.tasmc.fhir.r4
-canonical: https://ig-ichilov.r7g.org
+# canonical: https://ig-ichilov.r7g.org
+canonical: http://fhir.tasmc.org.il
 name: tasmc
 title: Tel Aviv Sourasky Medical Center
 # description: Example Implementation Guide for getting started with SUSHI
@@ -107,6 +108,7 @@ parameters:
   excludettl: true
   generate: example-narratives
   logging: tx
+  # pin-canonicals: true
 #   validation: [allow-any-extensions, no-broken-links]
 #
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮

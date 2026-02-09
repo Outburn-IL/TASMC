@@ -1,6 +1,6 @@
 {
 	"fhirversion": "4.0.1",
-	"path": "https://ig-ichilov.r7g.org/0.5.2",
+	"path": "http://fhir.tasmc.org.il/0.5.2",
 	"sequence": "Release",
 	"status": "draft",
 	"version": "0.5.2"
