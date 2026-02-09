@@ -10,7 +10,7 @@ name: tasmc
 title: Tel Aviv Sourasky Medical Center
 # description: Example Implementation Guide for getting started with SUSHI
 status: draft # draft | active | retired | unknown
-version: 0.5.1
+version: 0.5.2
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
@@ -34,42 +34,65 @@ dependencies:
     version: 0.3.1
 pages:
   index.md:
-    title: הקדמה
+    title: HOME
     generation: markdown
-  profiles-and-extensions.md:
-    title: פרופילים והרחבות
+  project.md:
+    title: PROJECT
+    generation: markdown
+  etl-by-fume.md:
+    title: ETL by FUME
+    generation: markdown
+  profiles.md:
+    title: Profiles
+    generation: markdown
+  extensions.md:
+    title: Extensions
+    generation: markdown
+  valuesets.md:
+    title: Value Sets
+    generation: markdown
+  codesystems.md:
+    title: Code Systems
+    generation: markdown
+  conceptmaps.md:
+    title: Concept Maps
     generation: markdown
   terminology.md:
-    title: טרמינולוגיה
+    title: Ternimology
+    generation: markdown
+  guidelines.md:
+    title: הנחיות
     generation: markdown
   examples.md:
-    title: דוגמאות
+    title: Examples
+    generation: markdown
+  issues.md:
+    title: סוגיות
     generation: markdown
   downloads.md:
-    title: הורדות
-    generation: markdown
-  versions.md:
-    title: גרסאות
+    title: Downloads
     generation: markdown
 
 
-
+  
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-#   יש לשים לב שסדר הטאבים באתר הוא הופכי לרשימה הבאה שכן בעברית המדריך יוצג מימין לשמאל  
-
 menu:
+  Downloads: downloads.html
   סוגיות: issues.html
-  קישורים:
-    FHIR Spec: new-tab {{site.data.fhir.path}}index.html
-    Israel LCore: new-tab https://en.fhir-il-community.org/fhir-israel-core
-  הורדות: downloads.html
-  משאבי FHIR:
-    פרופילים והרחבות: profiles-and-extensions.html
-    טרמינולוגיה: terminology.html
-    דוגמאות: examples.html
-  בית: index.html
+  Examples: examples.html
+  הנחיות: guidelines.html
+  Ternimology: terminology.html
+  FHIR Artifacts:
+    Concept Maps: conceptmaps.html
+    Code Systems: codesystems.html
+    Value Sets: valuesets.html
+    Extensions: extensions.html
+    Profiles: profiles.html
+  ETL by FUME: etl-by-fume.html
+  PROJECT: project.html
+  HOME: index.html
 
 # The parameters property represents IG.definition.parameter. Rather
 # than a list of code/value pairs (as in the ImplementationGuide
