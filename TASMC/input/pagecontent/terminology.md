@@ -1,19 +1,11 @@
+<div id="intro" dir="rtl" markdown="1">
 
-This page lists all ValueSets and CodeSystems defined as part of this specification. 
+## סוגיות
 
-### רשימות ערכים
+הסבר כללי למה שנעשה בסוראסקי, כולל מורכבויות והתייחסות לנושאים ייחודיים.
 
+## נכסים
 
-{% include res-list-generator.md type="ValueSet" %}
+רשימת של כל הטרמינולוגיות שבשימוש, עם התייחסות למקור של כל אחת מהן (למשל hl7, il core, מקומי(
 
-
-### מערכות קידוד
-
-
-{% include res-list-generator.md type="CodeSystem" %}
-
-### Concept Maps
-
-
-{% include res-list-generator.md type="ConceptMap" %}
-
+</div>

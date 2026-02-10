@@ -4,10 +4,7 @@ Id: tasmc-location
 Title: "Sourasky Location Profile"
 Description: "Sourasky Location Profile"
 * insert ConformanceMetadata
-
 * id 1..1
-
-
 * identifier
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "system"

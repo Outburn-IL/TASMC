@@ -4,7 +4,7 @@ Usage: #definition
 Title: "Mapping from Sourasky local specimen types to SNOMED CT"
 Description: "Codes for mapping specimen types from TASMC specimen type to SNOMED-CT"
 * url = $concept-sct
-* version = "0.1.1"
+* version = "0.5.1"
 * name = "sct code mapping from Israeli MoH to HL7 v3-ReligiousAffiliation"
 * status = #draft
 * experimental = false

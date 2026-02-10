@@ -3,6 +3,7 @@ Parent: ILCoreObservationLab
 Id: tasmc-observation-lab
 Title: "Sourasky Lab Results Profile"
 Description: "tasmc Observation Lab profile, based on ILcoreObservationLab"
+* insert ConformanceMetadata
 * id 1..1
 * identifier.system 1..1
 * identifier.system = $lab-request-ident (exactly)

@@ -4,9 +4,7 @@ Id: tasmc-organization
 Title: "Sourasky Organization Profile"
 Description: "Sourasky Organization Profile"
 * insert ConformanceMetadata
-
 * id 1..1
-
 * identifier contains tasmc 1..1 and origin 0..* 
 * identifier[tasmc].system 1..1
 * identifier[tasmc].system = "http://fhir.tasmc.org.il/identifier/unit_id"

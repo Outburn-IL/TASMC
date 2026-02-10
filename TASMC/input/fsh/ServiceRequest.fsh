@@ -3,6 +3,7 @@ Parent: ILCoreServiceRequestLab
 Id: tasmc-service-request-lab
 Title: "tasmc Service Request Lab"
 Description: "tasmc ServiceRequest Lab profile, based on ILCoreServiceRequest"
+* insert ConformanceMetadata
 * id 1..1
 * identifier.system 1..1
 * identifier.system = $lab-request-ident (exactly)
