@@ -4,6 +4,7 @@ Title: "tasmc Specimen Type"
 Description: "Codes for specimen types"
 * ^url = $specimen-type
 * ^caseSensitive = false
+* insert ConformanceMetadata
 * #-1 "לא ידוע"
 * #0 "לא ידוע"
 * #-2 "QC"

@@ -3,6 +3,7 @@ Parent: ILCoreSpecimen
 Id: tasmc-specimen-lab
 Title: "Sourasky Lab Samples Profile"
 Description: "tasmc Specimen Lab profile, based on sctSpecimen"
+* insert ConformanceMetadata
 * id 1..1
 * identifier.system 1..1
 * identifier.system = $lab-spec-ident (exactly)

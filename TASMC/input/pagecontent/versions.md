@@ -1,3 +1,4 @@
+
 # Version History
 
 This page lists all published versions of the Implementation Guide and their current status.
@@ -18,7 +19,9 @@ This page lists all published versions of the Implementation Guide and their cur
 
 | Version | Status  | FHIR Version | Description                  | URL                             |
 |---------|---------|--------------|------------------------------|---------------------------------|
-| 0.4.2   | Active  | R4 (4.0.1)   | Bug fixes and clarifications | https://fhir.tasmc.org.il/0.4.2 |
+| 0.5.2   | active  | R4 (4.0.1)   | Bug fixes and clarifications | https://fhir.tasmc.org.il/0.5.2 |
+| 0.5.0   | Retired | R4 (4.0.1)   | New Profiles                 | https://fhir.tasmc.org.il/0.5.0 |
+| 0.4.2   | Retired | R4 (4.0.1)   | Bug fixes and clarifications | https://fhir.tasmc.org.il/0.4.2 |
 | 0.4.0   | Retired | R4 (4.0.1)   | Initial public release       | https://fhir.tasmc.org.il/0.4.0 |
 
 ---

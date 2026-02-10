@@ -1,0 +1,60 @@
+{
+  "resourceType": "Organization",
+  "id": "organization-tasmc",
+  "meta": {
+    "profile": [
+      "http://fhir.tasmc.org.il/StructureDefinition/tasmc-organization"
+    ],
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+        "code": "N",
+        "display": "normal"
+      }
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.health.gov.il/identifier/legal-entity",
+      "value": "500100000"
+    }
+  ],
+  "active": true,
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        }
+      ]
+    }
+  ],
+  "name": "המרכז הרפואי תל-אביב ע\"ש סוראסקי (איכילוב)",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "03-6974444"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "רחוב ויצמן 6"
+      ],
+      "city": "תל אביב-יפו",
+      "postalCode": "6423906",
+      "country": "IL"
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"rtl\"><p><b>המרכז הרפואי תל-אביב ע\"ש סוראסקי (איכילוב)</b></p><p>כתובת: רחוב ויצמן 6, תל אביב-יפו</p><p>טלפון: 03-6974444</p></div>"
+  }
+}

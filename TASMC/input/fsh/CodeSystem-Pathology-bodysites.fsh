@@ -3,6 +3,7 @@ Id: tasmc-pathology-bodysites
 Title: "TASMC  Pathology lab body sites"
 Description: "TASMC collected body sites as Pathology lab specimens"
 * ^url = $body-sites
+* insert ConformanceMetadata
 * #22211 "ניסוי"
 * #61 "ציפורן"
 * #48 "Sternum"
