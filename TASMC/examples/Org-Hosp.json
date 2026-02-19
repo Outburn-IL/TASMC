@@ -33,7 +33,7 @@
           }
         ]
       },
-      "system": "http://fhir.tasmc.org.il/identifier/hosp_id",
+      "system": "http://fhir.tasmc.org.il/identifier/unit_id",
       "value": "100"
     }
   ],
