@@ -11,7 +11,7 @@ Description: "Sourasky Location Profile"
   * ^slicing.rules = #open
   * ^slicing.ordered = false
   
-* identifier contains tasmc 1..1 and origin 0..* 
+* identifier contains tasmc 1..1 
 * identifier[tasmc].system 1..1
 * identifier[tasmc].system = "http://fhir.tasmc.org.il/identifier/location_id" (exactly)
 * identifier[tasmc].value 1..1
