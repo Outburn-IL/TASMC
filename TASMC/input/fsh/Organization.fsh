@@ -16,15 +16,15 @@ Description: "Sourasky Organization Profile"
 * identifier[legal-entity].value 1..1
 * identifier[legal-entity].value = "500106919"
 
-* type contains gate 0..1 and level 0..1 
-* type[gate].coding.system 1..1
-* type[gate].coding.system = "http://fhir.tasmc.org.il/cs/type-gate-id" (exactly)
-* type[gate].coding.code 1..1
-* type[gate].coding.display 1..1
-* type[level].coding.system 1..1
-* type[level].coding.system = "http://fhir.tasmc.org.il/cs/type-level" (exactly)
-* type[level].coding.code 1..1
-* type[level].coding.display 1..1
+// * type contains gate 0..1 and level 0..1 
+// * type[gate].coding.system 1..1
+// * type[gate].coding.system = "http://fhir.tasmc.org.il/cs/type-gate-id" (exactly)
+// * type[gate].coding.code 1..1
+// * type[gate].coding.display 1..1
+// * type[level].coding.system 1..1
+// * type[level].coding.system = "http://fhir.tasmc.org.il/cs/type-level" (exactly)
+// * type[level].coding.code 1..1
+// * type[level].coding.display 1..1
 
 * partOf.reference 1..1
 
