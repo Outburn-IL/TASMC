@@ -1,0 +1,48 @@
+{
+  "resourceType": "Location",
+  "id": "location-lab-chemistry",
+  "meta": {
+    "profile": [
+      "http://fhir.tasmc.org.il/StructureDefinition/tasmc-location"
+    ],
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+        "code": "N",
+        "display": "normal"
+      }
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.tasmc.org.il/identifier/location",
+      "value": "LAB-CHEM-01"
+    }
+  ],
+  "status": "active",
+  "name": "מעבדה לביוכימיה קלינית",
+  "mode": "instance",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+          "code": "CVDX",
+          "display": "Cardiovascular diagnostics or therapeutics unit"
+        }
+      ]
+    }
+  ],
+  "managingOrganization": {
+    "reference": "Organization/organization-tasmc"
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"rtl\"><p><b>מעבדה לביוכימיה קלינית</b></p><p>מזהה: LAB-CHEM-01</p><p>סטטוס: פעיל</p></div>"
+  }
+}

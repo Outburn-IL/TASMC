@@ -1,0 +1,54 @@
+{
+  "resourceType": "Specimen",
+  "id": "specimen-blood-example",
+  "meta": {
+    "profile": [
+      "http://fhir.tasmc.org.il/StructureDefinition/tasmc-specimen-lab"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.tasmc.org.il/identifier/specimen",
+      "value": "SPEC2024123456"
+    }
+  ],
+  "accessionIdentifier": {
+    "system": "http://fhir.tasmc.org.il/identifier/specimen-accession",
+    "value": "ACC2024001234"
+  },
+  "status": "available",
+  "type": {
+    "coding": [
+      {
+        "system": "http://fhir.tasmc.org.il/CodeSystem/labos-specimen-type",
+        "code": "20",
+        "display": "Serum"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "119364003",
+        "display": "Serum specimen"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-example-1"
+  },
+  "receivedTime": "2024-02-08T08:30:00+02:00",
+  "collection": {
+    "collectedDateTime": "2024-02-08T08:00:00+02:00",
+    "bodySite": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "368209003",
+          "display": "Right arm"
+        }
+      ]
+    }
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"rtl\"><p><b>דגימת סרום</b></p><p>מזהה דגימה: SPEC2024123456</p><p>מספר קבלה: ACC2024001234</p><p>תאריך איסוף: 08/02/2024 08:00</p><p>סטטוס: זמינה</p></div>"
+  }
+}
