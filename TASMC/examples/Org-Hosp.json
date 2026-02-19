@@ -1,0 +1,65 @@
+{
+  "resourceType": "Organization",
+  "id": "HOSP.01201",
+  "meta": {
+    "security": [
+      {
+        "system": "http://fhir.health.gov.il/cs/il-hdp-information-buckets",
+        "code": "organization",
+        "display": "יחידה ארגונית"
+      }
+    ],
+    "profile": [
+      "http://hdp.fhir.health.gov.il/StructureDefinition/il-hdp-organization",
+      "http://fhir.tasmc.org.il/StructureDefinition/tasmc-organization"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://institutions.health.gov.il/Institutions",
+      "value": "01201"
+    },
+    {
+      "system": "http://fhir.health.gov.il/identifier/legal-entity",
+      "value": "500106919"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://fhir.health.gov.il/cs/il-core-identifier-type",
+            "code": "strong-id",
+            "display": "Strong Identifier"
+          }
+        ]
+      },
+      "system": "http://fhir.tasmc.org.il/identifier/unit_id",
+      "value": "100"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://fhir.health.gov.il/cs/institution-type-moh",
+          "code": "1",
+          "display": "אשפוז כללי"
+        }
+      ]
+    }
+  ],
+  "name": "המרכז הרפואי תל אביב על שם סוראסקי - איכילוב",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "03-697-4444"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "וייצמן 6 תל אביב-יפו"
+      ]
+    }
+  ]
+}
