@@ -7,5 +7,7 @@ Description: "Abnormal Flag codes"
 * insert ConformanceMetadata
 * #L "low"
 * #H "high"
+* #HH "panic high"
+* #LL "panic low"
 * #PL "panic low"
 * #PH "panic high"
