@@ -1,0 +1,97 @@
+{
+  "resourceType": "Bundle",
+  "id": "2146326c-e853-48c6-aabb-0487105143a3",
+  "type": "batch",
+  "entry": [
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Organization/UNIT.20"
+      },
+      "fullUrl": "urn:uuid:2184edd7-5ecc-5fdc-8e80-e3f979db0f41",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "UNIT.20",
+        "meta": {
+          "security": [
+            {
+              "system": "http://fhir.health.gov.il/cs/il-hdp-information-buckets",
+              "code": "organization",
+              "display": "יחידה ארגונית"
+            }
+          ],
+          "profile": [
+            "http://hdp.fhir.health.gov.il/StructureDefinition/il-hdp-organization",
+            "http://fhir.tasmc.org.il/StructureDefinition/tasmc-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://fhir.health.gov.il/cs/il-core-identifier-type",
+                  "code": "strong-id",
+                  "display": "Strong Identifier"
+                }
+              ]
+            },
+            "system": "http://fhir.tasmc.org.il/identifier/unit_id",
+            "value": "20"
+          },
+          {
+            "system": "http://fhir.tasmc.org.il/identifier/AutoDB_Clients",
+            "value": "10701"
+          },
+          {
+            "system": "http://fhir.tasmc.org.il/identifier/AutoDB",
+            "value": "107"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://fhir.health.gov.il/cs/department-type-moh",
+                "code": "10701"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://fhir.tasmc.org.il/cs/type-gate-id",
+                "code": "3",
+                "display": "אשפוז"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://fhir.tasmc.org.il/cs/type-level",
+                "code": "4",
+                "display": "Yahida"
+              }
+            ]
+          }
+        ],
+        "name": "טיפול נמרץ כללי - מחלקה",
+        "alias": [
+          "טיפול נמרץ כללי",
+          "טיפול נמרץ"
+        ],
+        "address": [
+          {
+            "line": [
+              "וייצמן 6 תל אביב-יפו"
+            ]
+          }
+        ],
+        "partOf": {
+          "reference": "Organization/UNIT.1257"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "resourceType": "Bundle",
+  "id": "70a7bce5-a76e-4971-885f-513ae406424e",
+  "type": "batch",
+  "entry": [
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Location/LOC.20"
+      },
+      "fullUrl": "urn:uuid:a919ce1d-2a96-515e-a2a9-d1489a2e634e",
+      "resource": {
+        "resourceType": "Location",
+        "id": "LOC.20",
+        "meta": {
+          "security": [
+            {
+              "system": "http://fhir.health.gov.il/cs/il-hdp-information-buckets",
+              "code": "organization",
+              "display": "יחידה ארגונית"
+            }
+          ],
+          "profile": [
+            "http://hdp.fhir.health.gov.il/StructureDefinition/il-hdp-location",
+            "http://fhir.tasmc.org.il/StructureDefinition/tasmc-location"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://fhir.tasmc.org.il/identifier/location_id",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://fhir.health.gov.il/cs/il-core-identifier-type",
+                  "code": "strong-id",
+                  "display": "Strong Identifier"
+                }
+              ]
+            },
+            "value": "20"
+          },
+          {
+            "system": "http://fhir.tasmc.org.il/identifier/AutoDB_Clients",
+            "value": "10701"
+          },
+          {
+            "system": "http://fhir.tasmc.org.il/identifier/AutoDB",
+            "value": "107"
+          }
+        ],
+        "name": "טיפול נמרץ כללי - מחלקה",
+        "alias": [
+          "טיפול נמרץ כללי",
+          "טיפול נמרץ"
+        ],
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit"
+              }
+            ]
+          }
+        ],
+        "address": {
+          "line": [
+            "סוראסקי קומה 3 אגף ו"
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/UNIT.1257"
+        }
+      }
+    }
+  ]
+}
