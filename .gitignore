@@ -24,3 +24,9 @@ Thumbs.db
 *.zip
 #remove these when ready to publish
 # *.md
+TASMC/_genonce.bat
+TASMC/_updatePublisher.bat
+TASMC/_gencontinuous.sh
+TASMC/_genonce.sh
+TASMC/_updatePublisher.sh
+TASMC/_gencontinuous.bat
