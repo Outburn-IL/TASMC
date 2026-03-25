@@ -1,7 +1,7 @@
 {
 	"fhirversion": "4.0.1",
-	"path": "http://fhir.tasmc.org.il/0.7.1",
+	"path": "http://fhir.tasmc.org.il/0.7.2",
 	"sequence": "Release",
 	"status": "draft",
-	"version": "0.7.1"
+	"version": "0.7.2"
 }
