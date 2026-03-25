@@ -73,6 +73,9 @@ pages:
   downloads.md:
     title: Downloads
     generation: markdown
+  example-blood-culture-negative.md:
+    title: example-blood-culture-negative
+    generation: markdown
 
 
   
