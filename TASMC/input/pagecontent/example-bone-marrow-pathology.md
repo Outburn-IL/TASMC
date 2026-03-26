@@ -39,6 +39,10 @@
 
 ## JSON מלא
 
+</div>
+
+<div dir="ltr">
+
 ```json
 {
   "resourceType": "Bundle",
@@ -265,5 +269,7 @@
   ]
 }
 ```
+
+</div>
 
 </div>

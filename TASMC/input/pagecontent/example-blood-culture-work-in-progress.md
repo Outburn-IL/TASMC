@@ -22,6 +22,10 @@
 
 ### Bundle JSON
 
+</div>
+
+<div dir="ltr">
+
 ```json
 {
   "resourceType": "Bundle",
@@ -1739,5 +1743,7 @@
   "type": "transaction"
 }
 ```
+
+</div>
 
 </div>

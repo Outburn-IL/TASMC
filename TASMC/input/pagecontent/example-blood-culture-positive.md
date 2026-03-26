@@ -43,6 +43,8 @@
 
 </div>
 
+<div dir="ltr">
+
 ```json
 {
   "resourceType": "Bundle",
@@ -667,3 +669,5 @@
   ]
 }
 ```
+
+</div>
