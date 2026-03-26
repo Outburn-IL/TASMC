@@ -41,9 +41,7 @@
 
 </div>
 
-<div dir="ltr">
-
-```json
+<pre dir="ltr"><code class="language-json">
 {
   "resourceType": "Bundle",
   "type": "transaction",
@@ -268,8 +266,4 @@
     }
   ]
 }
-```
-
-</div>
-
-</div>
+</code></pre>
