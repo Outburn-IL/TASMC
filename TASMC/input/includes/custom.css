@@ -1,0 +1,60 @@
+/* Force content to start below TOC, not wrap around it */
+.side-toc + * {
+  clear: both;
+}
+
+/* Make TOC float properly */
+nav.toc {
+  float: right;
+  clear: right;
+}
+
+.content {
+  overflow: visible;
+}
+
+/* Change primary color from green to cyan #00A6DC */
+:root {
+  --primary-color: #00A6DC;
+}
+
+/* Navbar color */
+.navbar {
+  background-color: #00A6DC !important;
+}
+
+/* Primary buttons */
+.btn-primary {
+  background-color: #00A6DC !important;
+  border-color: #00A6DC !important;
+}
+
+/* Links */
+a {
+  color: #00A6DC;
+}
+
+a:hover {
+  color: #0088b8;
+}
+
+/* Table of contents background - lighter version of primary color */
+.side-toc, nav.toc {
+  background-color: #e6f7fc;
+  border-color: #00A6DC;
+}
+
+/* Active navigation items */
+.nav-link.active {
+  background-color: #00A6DC !important;
+}
+
+/* Breadcrumbs */
+.breadcrumb .active {
+  color: #00A6DC;
+}
+
+/* Headers with anchor links */
+h1 a, h2 a, h3 a, h4 a {
+  color: #00A6DC;
+}

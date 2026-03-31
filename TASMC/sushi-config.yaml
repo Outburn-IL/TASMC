@@ -8,10 +8,10 @@ packageId: il.tasmc.fhir.r4
 # canonical: https://ig-ichilov.r7g.org
 canonical: http://fhir.tasmc.org.il
 name: tasmc
-title: Tel Aviv Sourasky Medical Center
+title: TASMC Labs IG
 # description: Example Implementation Guide for getting started with SUSHI
 status: draft # draft | active | retired | unknown
-version: 0.7.4
+version: 0.7.5
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
@@ -33,6 +33,10 @@ dependencies:
   il.hdp.fhir.r4: 
     uri: http://fhir.health.gov.il/ImplementationGuide/il.hdp.fhir.r4
     version: 0.4.5
+No - I only gave you the `pages:` section structure showing the hierarchy. I didn't include the `generation: markdown` lines.
+
+You need to add `generation: markdown` back to each page. Like this:
+
 pages:
   index.md:
     title: HOME
@@ -67,46 +71,47 @@ pages:
   examples.md:
     title: Examples
     generation: markdown
+    example-bone-marrow-pathology.md:
+      title: Bone Marrow Pathology Example
+      generation: markdown
+    example-blood-culture-negative.md:
+      title: Blood Culture Negative Example
+      generation: markdown
+    example-blood-culture-positive.md:
+      title: Blood Culture Positive Example
+      generation: markdown
+    example-blood-culture-work-in-progress.md:
+      title: Blood Culture Work in Progress Example
+      generation: markdown
+    example-cbc-egfr-mixed.md:
+      title: CBC and eGFR Mixed Example
+      generation: markdown
   issues.md:
     title: סוגיות
     generation: markdown
   downloads.md:
     title: Downloads
     generation: markdown
-  example-blood-culture-negative.md:
-    title: example-blood-culture-negative
-    generation: markdown
-  example-blood-culture-positive.md:
-    title: example-blood-culture-positive
-    generation: markdown
-  example-blood-culture-work-in-progress.md:
-    title: example-blood-culture-work-in-progress
-    generation: markdown
-  example-cbc-egfr-mixed.md:
-    title: example-cbc-egfr-mixed
-    generation: markdown
-  example-bone-marrow-pathology.md:
-    title: example-bone-marrow-pathology
-    generation: markdown
+
     
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
-  Downloads: downloads.html
+  בית: index.html
+  הורדות: downloads.html
+  פרויקט: project.html
   סוגיות: issues.html
-  Examples: examples.html
+  דוגמאות: examples.html
   הנחיות: guidelines.html
-  Ternimology: terminology.html
-  FHIR Artifacts:
+  טרמינולוגיה: terminology.html
+  FHIR משאבי:
     Concept Maps: conceptmaps.html
     Code Systems: codesystems.html
     Value Sets: valuesets.html
     Extensions: extensions.html
     Profiles: profiles.html
-  ETL by FUME: etl-by-fume.html
-  PROJECT: project.html
-  HOME: index.html
+  פתרון המרה: etl-by-fume.html
 
 # The parameters property represents IG.definition.parameter. Rather
 # than a list of code/value pairs (as in the ImplementationGuide
@@ -121,6 +126,7 @@ parameters:
   excludettl: true
   generate: example-narratives
   logging: tx
+  apply-custom-css: true
   # pin-canonicals: true
 #   validation: [allow-any-extensions, no-broken-links]
 #
