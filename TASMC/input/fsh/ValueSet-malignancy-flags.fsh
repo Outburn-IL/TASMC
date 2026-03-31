@@ -1,4 +1,4 @@
-ValueSet: TasmcMalignancyFlags
+ValueSet: VsTasmcMalignancyFlags
 Id: tasmc-malignancy-flags
 Title: "tasmc malignancy Codes"
 Description: "Local Codes for malignancy flags in tasmc"

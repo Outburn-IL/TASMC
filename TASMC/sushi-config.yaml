@@ -33,9 +33,6 @@ dependencies:
   il.hdp.fhir.r4: 
     uri: http://fhir.health.gov.il/ImplementationGuide/il.hdp.fhir.r4
     version: 0.4.5
-No - I only gave you the `pages:` section structure showing the hierarchy. I didn't include the `generation: markdown` lines.
-
-You need to add `generation: markdown` back to each page. Like this:
 
 pages:
   index.md:
