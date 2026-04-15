@@ -95,13 +95,9 @@ pages:
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
-  בית: index.html
   הורדות: downloads.html
-  פרויקט: project.html
   סוגיות: issues.html
   דוגמאות: examples.html
-  הנחיות: guidelines.html
-  טרמינולוגיה: terminology.html
   FHIR משאבי:
     Concept Maps: conceptmaps.html
     Code Systems: codesystems.html
@@ -109,6 +105,10 @@ menu:
     Extensions: extensions.html
     Profiles: profiles.html
   פתרון המרה: etl-by-fume.html
+  טרמינולוגיה: terminology.html
+  הנחיות: guidelines.html
+  פרויקט: project.html
+  בית: index.html
 
 # The parameters property represents IG.definition.parameter. Rather
 # than a list of code/value pairs (as in the ImplementationGuide
