@@ -24,3 +24,5 @@ Alias: $patient-namer-ident = http://fhir.tasmc.health.gov.il/identifier/nmr-pat
 // VS
 Alias: $vs-request-code = http://fhir.tasmc.org.il/ValueSet/labos-request-code
 Alias: $vs-malignancy-flags = http://fhir.tasmc.org.il/ValueSet/tasmc-malignancy-flags
+Alias: $vs-il-core-manifestation =      http://fhir.health.gov.il/ValueSet/il-core-manifestation
+

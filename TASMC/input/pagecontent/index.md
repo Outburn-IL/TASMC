@@ -26,4 +26,7 @@
 
 תיאור מאפייני סוג המעבדה + תרשים
 
+#### משוב
+גרסה זו של המסמך נמצאת בתהליכי אישור.
+הערות או שאלות על התוכן ניתן למלא במסמך [הבא](https://outburn454-my.sharepoint.com/:x:/g/personal/uri_outburn_co_il/IQA_AbPrgjSyQrBoGPlFIiMeAUBf4B__vq6K07VXckJ9h-0?e=CVqVh6)
 </div>
