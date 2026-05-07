@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="320" viewBox="0 0 860 320">
+
+  <defs>
+    <marker id="mblue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="morange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c2410c"/>
+    </marker>
+    <marker id="mgreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#15803d"/>
+    </marker>
+    <marker id="mpurple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+
+  <!-- Background bands -->
+  <rect x="14" y="40" width="592" height="103" rx="6" fill="#eef2ff" opacity="0.6"/>
+  <rect x="14" y="200" width="592" height="103" rx="6" fill="#f5f3ff" opacity="0.6"/>
+
+  <!-- Section labels -->
+  <text x="20" y="37" font-family="Arial" font-size="9" fill="#94a3b8">FHIR Conversion</text>
+  <text x="20" y="197" font-family="Arial" font-size="9" fill="#94a3b8">&#x05D2;&#x05D9;&#x05E9;&#x05D4; &#x05D7;&#x05D9;&#x05E6;&#x05D5;&#x05E0;&#x05D9;&#x05EA;</text>
+
+  <!-- ===== ROW 1: ETL PIPELINE ===== -->
+
+  <!-- Autolab -->
+  <rect x="20" y="48" width="138" height="82" rx="7" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="89" y="76" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#1e3a8a">Autolab</text>
+  <text x="89" y="96" text-anchor="middle" font-family="Arial" font-size="11" fill="#1d4ed8">&#x05DE;&#x05E2;&#x05E8;&#x05DB;&#x05EA; &#x05D4;&#x05DE;&#x05E7;&#x05D5;&#x05E8;</text>
+  <text x="89" y="114" text-anchor="middle" font-family="Arial" font-size="10" fill="#6b7280">HL7 V2 (ORU^R01)</text>
+
+  <!-- HealthShare HealthConnect -->
+  <rect x="200" y="48" width="180" height="82" rx="7" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="290" y="71" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#1e3a8a">HealthShare</text>
+  <text x="290" y="88" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#1e3a8a">HealthConnect</text>
+  <text x="290" y="107" text-anchor="middle" font-family="Arial" font-size="10" fill="#1d4ed8">&#x05EA;&#x05E9;&#x05EA;&#x05D9;&#x05EA; &#x05D0;&#x05D9;&#x05E0;&#x05D8;&#x05D2;&#x05E8;&#x05E6;&#x05D9;&#x05D4;</text>
+  <text x="290" y="122" text-anchor="middle" font-family="Arial" font-size="10" fill="#6b7280">+ FUME Plugin</text>
+
+  <!-- FUME -->
+  <rect x="430" y="48" width="132" height="82" rx="7" fill="#fff7ed" stroke="#c2410c" stroke-width="1.5"/>
+  <text x="496" y="76" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#7c2d12">FUME</text>
+  <text x="496" y="96" text-anchor="middle" font-family="Arial" font-size="11" fill="#9a3412">&#x05DE;&#x05E0;&#x05D5;&#x05E2; &#x05D4;&#x05DE;&#x05E8;&#x05D4;</text>
+  <text x="496" y="114" text-anchor="middle" font-family="Arial" font-size="10" fill="#c2410c">HL7 V2 &#x2192; FHIR</text>
+
+  <!-- ===== ROW 2: EXTERNAL ACCESS ===== -->
+
+  <!-- External Client -->
+  <rect x="20" y="208" width="130" height="82" rx="7" fill="#faf5ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="85" y="236" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#4c1d95">External</text>
+  <text x="85" y="253" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#4c1d95">Client</text>
+  <text x="85" y="274" text-anchor="middle" font-family="Arial" font-size="10" fill="#6b7280">HTTPS GET</text>
+
+  <!-- DMZ -->
+  <rect x="212" y="208" width="120" height="82" rx="7" fill="#faf5ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="272" y="245" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#4c1d95">DMZ</text>
+  <text x="272" y="266" text-anchor="middle" font-family="Arial" font-size="10" fill="#6b7280">Network Layer</text>
+
+  <!-- Interceptor -->
+  <rect x="394" y="208" width="160" height="82" rx="7" fill="#faf5ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="474" y="238" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#4c1d95">Interceptor</text>
+  <text x="474" y="257" text-anchor="middle" font-family="Arial" font-size="10" fill="#6b7280">&#x05E1;&#x05D9;&#x05E0;&#x05D5;&#x05DF; &#x05EA;&#x05D5;&#x05DB;&#x05DF;</text>
+  <text x="474" y="273" text-anchor="middle" font-family="Arial" font-size="10" fill="#7c3aed">&#x05D0;&#x05DB;&#x05D9;&#x05E4;&#x05EA; &#x05D7;&#x05D9;&#x05E1;&#x05D9;&#x05D5;&#x05DF;</text>
+
+  <!-- ===== FHIR SERVER (tall box, right side) ===== -->
+  <rect x="612" y="34" width="230" height="240" rx="8" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+
+  <!-- FHIR title -->
+  <text x="727" y="60" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#14532d">FHIR Server</text>
+  <text x="727" y="78" text-anchor="middle" font-family="Arial" font-size="11" fill="#166534">InterSystems IRIS</text>
+  <line x1="614" y1="87" x2="840" y2="87" stroke="#15803d" stroke-width="1" opacity="0.5"/>
+
+  <!-- ETL-related content (pure-language lines only to avoid bidi issues) -->
+  <text x="727" y="107" text-anchor="middle" font-family="Arial" font-size="10" fill="#166534">ConceptMaps</text>
+  <text x="727" y="122" text-anchor="middle" font-family="Arial" font-size="10" fill="#166534">&#x05DE;&#x05E4;&#x05D5;&#x05EA; &#x05D4;&#x05DE;&#x05E8;&#x05D4;</text>
+  <text x="727" y="138" text-anchor="middle" font-family="Arial" font-size="10" fill="#166534">&#x05D5;&#x05DC;&#x05D9;&#x05D3;&#x05E6;&#x05D9;&#x05D4;</text>
+  <text x="727" y="153" text-anchor="middle" font-family="Arial" font-size="10" fill="#166534">IL Core + Org Profiles</text>
+  <text x="727" y="168" text-anchor="middle" font-family="Arial" font-size="10" fill="#166534">&#x05E9;&#x05DE;&#x05D9;&#x05E8;&#x05EA; &#x05DE;&#x05E9;&#x05D0;&#x05D1;&#x05D9;&#x05DD;</text>
+
+  <!-- Divider between ETL and external sections -->
+  <line x1="624" y1="180" x2="840" y2="180" stroke="#15803d" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+
+  <!-- External-related content -->
+  <text x="727" y="198" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#166534">&#x05D2;&#x05D9;&#x05E9;&#x05D4; &#x05D7;&#x05D9;&#x05E6;&#x05D5;&#x05E0;&#x05D9;&#x05EA;</text>
+  <text x="727" y="214" text-anchor="middle" font-family="Arial" font-size="10" fill="#166534">FHIR REST API</text>
+  <text x="727" y="229" text-anchor="middle" font-family="Arial" font-size="10" fill="#166534">&#x05E7;&#x05E8;&#x05D9;&#x05D0;&#x05D4; &#x05D1;&#x05DC;&#x05D1;&#x05D3;</text>
+
+  <!-- ===== ARROWS ===== -->
+
+  <!-- A1: Autolab -> HealthConnect -->
+  <line x1="158" y1="89" x2="198" y2="89" stroke="#1d4ed8" stroke-width="2" marker-end="url(#mblue)"/>
+  <text x="178" y="82" text-anchor="middle" font-family="Arial" font-size="9" fill="#1d4ed8">HL7 V2</text>
+
+  <!-- A2: HealthConnect -> FUME -->
+  <line x1="380" y1="89" x2="428" y2="89" stroke="#1d4ed8" stroke-width="2" marker-end="url(#mblue)"/>
+  <text x="404" y="82" text-anchor="middle" font-family="Arial" font-size="9" fill="#1d4ed8">HL7 V2</text>
+
+  <!-- A3: FUME -> FHIR Server (bundle) -->
+  <line x1="562" y1="83" x2="610" y2="83" stroke="#c2410c" stroke-width="2" marker-end="url(#morange)"/>
+  <text x="586" y="75" text-anchor="middle" font-family="Arial" font-size="9" fill="#c2410c">FHIR Bundle</text>
+
+  <!-- A4: FHIR Server -> FUME (maps, dashed) -->
+  <line x1="610" y1="105" x2="562" y2="105" stroke="#15803d" stroke-width="1.8" stroke-dasharray="4,3" marker-end="url(#mgreen)"/>
+  <text x="586" y="120" text-anchor="middle" font-family="Arial" font-size="9" fill="#15803d">Maps</text>
+
+  <!-- B1: External -> DMZ -->
+  <line x1="150" y1="249" x2="210" y2="249" stroke="#7c3aed" stroke-width="2" marker-end="url(#mpurple)"/>
+  <text x="180" y="242" text-anchor="middle" font-family="Arial" font-size="9" fill="#7c3aed">HTTPS</text>
+
+  <!-- B2: DMZ -> Interceptor -->
+  <line x1="332" y1="249" x2="392" y2="249" stroke="#7c3aed" stroke-width="2" marker-end="url(#mpurple)"/>
+
+  <!-- B3: Interceptor -> FHIR Server -->
+  <line x1="554" y1="249" x2="610" y2="249" stroke="#7c3aed" stroke-width="2" marker-end="url(#mpurple)"/>
+  <text x="582" y="242" text-anchor="middle" font-family="Arial" font-size="9" fill="#7c3aed">FHIR REST</text>
+
+</svg>

@@ -19,7 +19,8 @@ This page lists all published versions of the Implementation Guide and their cur
 
 | Version | Status  | FHIR Version | Description                  | URL                             |
 |---------|---------|--------------|------------------------------|---------------------------------|
-| 0.8.1   | active  | R4 (4.0.1)   | Bug fixes and clarifications | https://fhir.tasmc.org.il/0.5.2 |
+| 0.8.2   | active  | R4 (4.0.1)   | Content pages: guidelines, issues, ETL architecture | https://fhir.tasmc.org.il/0.8.2 |
+| 0.8.1   | Retired | R4 (4.0.1)   | Bug fixes and clarifications | https://fhir.tasmc.org.il/0.8.1 |
 | 0.5.2   | Retired | R4 (4.0.1)   | Bug fixes and clarifications | https://fhir.tasmc.org.il/0.5.2 |
 | 0.5.0   | Retired | R4 (4.0.1)   | New Profiles                 | https://fhir.tasmc.org.il/0.5.0 |
 | 0.4.2   | Retired | R4 (4.0.1)   | Bug fixes and clarifications | https://fhir.tasmc.org.il/0.4.2 |
@@ -48,4 +49,4 @@ Future FHIR versions will be published under a new major version.
 
 ---
 
-_Last updated: 2026-02-08_
+_Last updated: 2026-05-07_
