@@ -41,6 +41,12 @@ pages:
   project.md:
     title: PROJECT
     generation: markdown
+  guidelines.md:
+    title: הנחיות
+    generation: markdown
+  terminology.md:
+    title: Terminology
+    generation: markdown
   etl-by-fume.md:
     title: ETL by FUME
     generation: markdown
@@ -58,12 +64,6 @@ pages:
     generation: markdown
   conceptmaps.md:
     title: Concept Maps
-    generation: markdown
-  terminology.md:
-    title: Ternimology
-    generation: markdown
-  guidelines.md:
-    title: הנחיות
     generation: markdown
   examples.md:
     title: Examples
