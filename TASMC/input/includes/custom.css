@@ -1,16 +1,13 @@
-/* Force content to start below TOC, not wrap around it */
-.side-toc + * {
+/* On-page TOC: block display so content starts below, not alongside */
+nav.toc,
+.toc-tree,
+#toc,
+.side-toc {
+  float: none !important;
+  display: block;
   clear: both;
-}
-
-/* Make TOC float properly */
-nav.toc {
-  float: right;
-  clear: right;
-}
-
-.content {
-  overflow: visible;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
 }
 
 /* Change primary color from green to cyan #00A6DC */
