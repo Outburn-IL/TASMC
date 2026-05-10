@@ -1,4 +1,4 @@
 RuleSet: ConformanceMetadata
-* ^version = "0.8.1"
+* ^version = "0.8.4"
 * ^publisher = "TASMC"
-* ^date = "2026-05-05"
+* ^date = "2026-05-10"

@@ -5,6 +5,4 @@ Description: "malignancy flags of observation for lab code 0808910800"
 * ^url = $malignancy-flags
 * insert ConformanceMetadata
 * #B "Benign"
-* #P "Pre-malignant"
-* #D "Pre-malignant"
 * #M "Malignant"

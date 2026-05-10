@@ -1,6 +1,6 @@
 {
   "name": "il.tasmc.fhir",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "fhirVersions": [
     "4.0.1"
   ],
