@@ -43,7 +43,7 @@ Description: "Sourasky (TASMC) local profile for conditions and diagnoses, deriv
 * code.coding ^slicing.rules = #open
 * code.coding ^slicing.ordered = false
 * code.coding contains
-    sct 1..1 and
+    sct 0..1 and
     icd9 0..1
 
 * code.coding[sct].system 1..1
